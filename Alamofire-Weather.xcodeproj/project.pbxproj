@@ -75,6 +75,7 @@
 		52CD91861EEE2E8300F79AAD /* Alamofire-Weather */ = {
 			isa = PBXGroup;
 			children = (
+				BD2061192247B4DE000861FF /* Service */,
 				BD2060D7224334F6000861FF /* Controller */,
 				BD2060D0224333CC000861FF /* Model */,
 				BD2060D1224333DD000861FF /* View */,
@@ -90,8 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				BD2060C8223FB96D000861FF /* CurrentWeather.swift */,
-				BD2060C9223FB96D000861FF /* ForcecastService.swift */,
-				BD2061162246157C000861FF /* NetworkProcessor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +109,15 @@
 				BD2060D8224334F6000861FF /* CurrentWeatherViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BD2061192247B4DE000861FF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BD2060C9223FB96D000861FF /* ForcecastService.swift */,
+				BD2061162246157C000861FF /* NetworkProcessor.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D6BEB6F7FE1656C435D557F5 /* Pods */ = {

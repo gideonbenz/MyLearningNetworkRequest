@@ -9,9 +9,12 @@
 import Foundation
 
 class CurrentWeather {
-    let temperature: Int?
-    let humidity: Int?
-    let precipProbability: Int?
+//    let temperature: Int?
+//    let humidity: Int?
+//    let precipProbability: Int?
+    let temperature: Double?
+    let humidity: Double?
+    let precipProbability: Double?
     let summary : String?
     let icon : String?
     
@@ -24,19 +27,21 @@ class CurrentWeather {
     }
     
     init(weatherDictionary: [String : Any]) {
-        if let temperatureDouble = weatherDictionary[WeatherKeys.temperature] as? Double {
-            temperature = Int(temperatureDouble)
-        } else {temperature = nil}
+//        if let temperatureDouble = weatherDictionary[WeatherKeys.temperature] as? Double {
+//            temperature = Int(temperatureDouble)
+//        } else {temperature = nil}
+//
+//        if let humidityDouble = weatherDictionary[WeatherKeys.humidity] as? Double {
+//            humidity = Int(humidityDouble * 100)
+//        } else {humidity = nil}
+//
+//        if let precipProbabilityDouble = weatherDictionary[WeatherKeys.precipProbability] as? Double {
+//            precipProbability = Int (precipProbabilityDouble * 100)
+//        } else {precipProbability = nil}
         
-        if let humidityDouble = weatherDictionary[WeatherKeys.humidity] as? Double {
-            humidity = Int(humidityDouble * 100)
-        } else {humidity = nil}
-        
-        if let precipProbabilityDouble = weatherDictionary[WeatherKeys.precipProbability] as? Double {
-            precipProbability = Int (precipProbabilityDouble * 100)
-        } else {precipProbability = nil}
-        
-        
+        temperature = weatherDictionary[WeatherKeys.temperature] as? Double
+        humidity = weatherDictionary[WeatherKeys.humidity] as? Double
+        precipProbability = weatherDictionary[WeatherKeys.precipProbability] as? Double
         summary = weatherDictionary[WeatherKeys.summary] as? String
         icon = weatherDictionary[WeatherKeys.icon] as? String
     }
