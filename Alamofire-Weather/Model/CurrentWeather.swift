@@ -24,7 +24,9 @@ class CurrentWeather {
     }
     
     init(weatherDictionary: [String : Any]) {
-        temperature = weatherDictionary[WeatherKeys.temperature] as? Int
+        if let temperatureDouble = weatherDictionary[WeatherKeys.temperature] as? Double {
+            temperature = Int(temperatureDouble)
+        } else {temperature = nil}
         
         if let humidityDouble = weatherDictionary[WeatherKeys.humidity] as? Double {
             humidity = Int(humidityDouble * 100)
@@ -33,7 +35,6 @@ class CurrentWeather {
         if let precipProbabilityDouble = weatherDictionary[WeatherKeys.precipProbability] as? Double {
             precipProbability = Int (precipProbabilityDouble * 100)
         } else {precipProbability = nil}
-        
         
         
         summary = weatherDictionary[WeatherKeys.summary] as? String

@@ -35,4 +35,20 @@ class ForecastService {
             }
         }
     }
+    
+    func getForecastService(latitude: Double, longitude: Double, completion: @escaping (CurrentWeather?) -> Void) {
+        if let forecastURL = URL(string: "\(forecastBaseUrl!)/\(latitude),\(longitude)") {
+            
+            let networkProcessor = NetworkProcessor(url: forecastURL)
+            networkProcessor.downloadJSONFromURL { (jsonDictionary) in
+                if let currentWeatherDictionary = jsonDictionary?["currently"] as? [String : Any] {
+                    let currentWeather = CurrentWeather(weatherDictionary: currentWeatherDictionary)
+                    completion(currentWeather)
+                } else {completion(nil)}
+            }
+        }
+    }
+    
+    
+    
 }

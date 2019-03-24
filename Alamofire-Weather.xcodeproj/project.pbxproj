@@ -14,6 +14,7 @@
 		BD2060CA223FB96D000861FF /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2060C8223FB96D000861FF /* CurrentWeather.swift */; };
 		BD2060CB223FB96D000861FF /* ForcecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2060C9223FB96D000861FF /* ForcecastService.swift */; };
 		BD2060D9224334F6000861FF /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2060D8224334F6000861FF /* CurrentWeatherViewController.swift */; };
+		BD2061172246157C000861FF /* NetworkProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2061162246157C000861FF /* NetworkProcessor.swift */; };
 		C7C15BCBC6E4BF8550204A05 /* Pods_Alamofire_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E74D6B5CF5ABDFB59158DC /* Pods_Alamofire_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		BD2060C8223FB96D000861FF /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		BD2060C9223FB96D000861FF /* ForcecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForcecastService.swift; sourceTree = "<group>"; };
 		BD2060D8224334F6000861FF /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
+		BD2061162246157C000861FF /* NetworkProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProcessor.swift; sourceTree = "<group>"; };
 		D8F02E7F7549FEB265D8B360 /* Pods-Alamofire-Weather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alamofire-Weather.release.xcconfig"; path = "Target Support Files/Pods-Alamofire-Weather/Pods-Alamofire-Weather.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 			children = (
 				BD2060C8223FB96D000861FF /* CurrentWeather.swift */,
 				BD2060C9223FB96D000861FF /* ForcecastService.swift */,
+				BD2061162246157C000861FF /* NetworkProcessor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				52CD91881EEE2E8300F79AAD /* AppDelegate.swift in Sources */,
 				BD2060CB223FB96D000861FF /* ForcecastService.swift in Sources */,
 				BD2060D9224334F6000861FF /* CurrentWeatherViewController.swift in Sources */,
+				BD2061172246157C000861FF /* NetworkProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

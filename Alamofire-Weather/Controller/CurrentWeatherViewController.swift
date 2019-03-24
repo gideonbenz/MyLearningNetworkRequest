@@ -17,18 +17,22 @@ class CurrentWeatherViewController: UIViewController {
     
     let forecastAPIKey = "068630c69a624897c61dd081e2180525"
     let coordinate : (lat: Double, long: Double) = (37.8267,-122.4233)
-    var forecastService : ForecastService!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        forecastService = ForecastService(APIKey: forecastAPIKey)
-        forecastService.getCurrentWeather(latitude: coordinate.lat, longitude: coordinate.long) { (currentWeather) in
+        
+        let forecastService = ForecastService(APIKey: forecastAPIKey)
+        forecastService.getForecastService(latitude: coordinate.lat, longitude: coordinate.long) { (currentWeather) in
                 if let currentWeather = currentWeather {
                     DispatchQueue.main.async {
                         if let temperature = currentWeather.temperature {
                             self.temperatureLabel.text = "\(temperature)°"
+                             print("your temperature is \(temperature)")
                         } else{self.temperatureLabel.text = "--"}
+                        if let humidity = currentWeather.humidity {
+                            print("your humidity \(humidity)")
+                        } else {print("your humidity nil")}
                 }
             }
         }
