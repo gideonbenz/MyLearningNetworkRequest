@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //https://api.darksky.net/forecast/4054fdbd759f1f98339a975ea66cf407/37.8267,-122.4233
+        //https://api.darksky.net/forecast/068630c69a624897c61dd081e2180525/37.8267,-122.4233
 //        let url = URL(string: "https://api.darksky.net/forecast/068630c69a624897c61dd081e2180525/37.8267,-122.4233")!
 //        let networkProcessor = NetworkProcessor(url: url)
 //        networkProcessor.downloadJSONFromURL { (jsonDictionary) in
@@ -23,12 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print(jsonDictionary)
 //        }
         
-        //debug data dsini
+//     Debug Normal Request Data
 //        let forecastService = ForecastService(APIKey: "068630c69a624897c61dd081e2180525")
 //        forecastService.getForecastService(latitude: 37.8267, longitude: -122.4233) { (currentWeather) in
 //            print(currentWeather)
 //        }
         
+//     Debug Alamofire Request Data
+//        let forecastService = ForecastService(APIKey: "068630c69a624897c61dd081e2180525")
+//        forecastService.getCurrentWeather(latitude: 37.8267, longitude: -122.4233) { (currentWeather) in
+//            print(currentWeather)
+//        }
         return true
     }
 

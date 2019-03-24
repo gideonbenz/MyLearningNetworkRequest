@@ -21,18 +21,29 @@ class CurrentWeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let forecastService = ForecastService(APIKey: forecastAPIKey)
-        forecastService.getForecastService(latitude: coordinate.lat, longitude: coordinate.long) { (currentWeather) in
-                if let currentWeather = currentWeather {
-                    DispatchQueue.main.async {
-                        if let temperature = currentWeather.temperature {
-                            self.temperatureLabel.text = "\(Int(temperature))°"
-                             print("your temperature is \(temperature)")
-                        } else{self.temperatureLabel.text = "--"}
-                        if let humidity = currentWeather.humidity {
-                            print("your humidity \(humidity)")
-                        } else {print("your humidity nil")}
+        
+//     Request with normal Network Request
+//        forecastService.getForecastService(latitude: coordinate.lat, longitude: coordinate.long) { (currentWeather) in
+//                if let currentWeather = currentWeather {
+//                    DispatchQueue.main.async {
+//                        if let temperature = currentWeather.temperature {
+//                            self.temperatureLabel.text = "\(Int(temperature))°"
+//                             print("your temperature is \(temperature)")
+//                        } else{self.temperatureLabel.text = "--"}
+//                        if let humidity = currentWeather.humidity {
+//                            print("your humidity \(humidity)")
+//                        } else {print("your humidity nil")}
+//                }
+//            }
+//        }
+        
+        forecastService.getCurrentWeather(latitude: coordinate.lat, longitude: coordinate.long) { (currentWeather) in
+            if let currentWeather = currentWeather {
+                DispatchQueue.main.async {
+                    if let temperature = currentWeather.temperature {
+                        self.temperatureLabel.text = "\(Int(temperature))°"
+                    } else {self.temperatureLabel.text = "--" }
                 }
             }
         }
