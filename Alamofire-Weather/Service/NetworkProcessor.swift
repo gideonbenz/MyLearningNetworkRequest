@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Moya
 
 class NetworkProcessor {
     lazy var configuration : URLSessionConfiguration = URLSessionConfiguration.default
@@ -17,6 +18,8 @@ class NetworkProcessor {
     init(url : URL) {
         self.url = url
     }
+    
+    let userProvider = MoyaProvider<UserService>()
     
     typealias JSONDictionary = (([String : Any]?) -> Void)
     
@@ -42,5 +45,24 @@ class NetworkProcessor {
             } else { print("error: \(error?.localizedDescription)")}
         }
         dataTask.resume()
+    }
+    
+    func downloadJSONWithMoya(_ completion: @escaping JSONDictionary) {
+        
+        userProvider.request(.readWeather()) { (currentWeather) in
+            switch currentWeather {
+            case.success(let currentWeather):
+                do {
+                    let jsonDictionary = try JSONSerialization.jsonObject(with: currentWeather.data, options: .mutableContainers)
+//                    print(json)
+                    completion(jsonDictionary as? [String : Any])
+                } catch let error as NSError {
+                    print("Failed Json Serialization \(error.localizedDescription)")
+                }
+                
+            case.failure(let error):
+                print("Error requesting Moya: \(error.localizedDescription)")
+            }
+        }
     }
 }

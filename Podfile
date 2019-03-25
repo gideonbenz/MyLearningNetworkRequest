@@ -5,5 +5,5 @@ target 'Alamofire-Weather' do
   use_frameworks!
 
 pod 'Alamofire'
-
+pod 'Moya'
 end

@@ -1,16 +1,27 @@
 PODS:
   - Alamofire (4.8.1)
+  - Moya (12.0.1):
+    - Moya/Core (= 12.0.1)
+  - Moya/Core (12.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.0)
+  - Result (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Moya
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Moya
+    - Result
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 0f1c9c780c05efba5047800e9aac50c948c85770
+PODFILE CHECKSUM: 0b9151a2982fcf4d4da357ff5cfed3233e00f653
 
 COCOAPODS: 1.6.1
