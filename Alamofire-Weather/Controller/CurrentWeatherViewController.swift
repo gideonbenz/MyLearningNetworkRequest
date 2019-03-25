@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Moya
 
 class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var cityTextLabel: UILabel!
